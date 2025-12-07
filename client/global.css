@@ -7,89 +7,89 @@
 
 @layer base {
   /**
-   * Tailwind CSS theme - RestoVersion (dark with gold accents)
+   * Tailwind CSS theme - Black & White (clean, modern, professional)
    * tailwind.config.ts expects the following color variables to be expressed as HSL values.
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
-    /* RestoVersion theme: dark background with gold/amber accents */
-    --background: 25 20% 12%;
-    --foreground: 0 0% 95%;
+    /* Black & White theme: clean and professional */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 8%;
 
-    --card: 25 15% 18%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
 
-    --popover: 25 15% 18%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
 
-    --primary: 38 92% 50%;
-    --primary-foreground: 25 20% 12%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 25 30% 25%;
-    --secondary-foreground: 38 92% 50%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 25 15% 30%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 55%;
 
-    --accent: 38 92% 50%;
-    --accent-foreground: 25 20% 12%;
+    --accent: 0 0% 0%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 95%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 25 20% 22%;
-    --input: 25 15% 22%;
-    --ring: 38 92% 50%;
+    --border: 0 0% 90%;
+    --input: 0 0% 96%;
+    --ring: 0 0% 0%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 25 20% 15%;
-    --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 38 92% 50%;
-    --sidebar-primary-foreground: 25 20% 12%;
-    --sidebar-accent: 25 30% 25%;
-    --sidebar-accent-foreground: 38 92% 50%;
-    --sidebar-border: 25 20% 22%;
-    --sidebar-ring: 38 92% 50%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 8%;
+    --sidebar-primary: 0 0% 0%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 90%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 88%;
+    --sidebar-ring: 0 0% 0%;
   }
 
   .dark {
-    --background: 25 20% 12%;
-    --foreground: 0 0% 95%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 8%;
 
-    --card: 25 15% 18%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
 
-    --popover: 25 15% 18%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
 
-    --primary: 38 92% 50%;
-    --primary-foreground: 25 20% 12%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 25 30% 25%;
-    --secondary-foreground: 38 92% 50%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 25 15% 30%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 55%;
 
-    --accent: 38 92% 50%;
-    --accent-foreground: 25 20% 12%;
+    --accent: 0 0% 0%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 95%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 25 20% 22%;
-    --input: 25 15% 22%;
-    --ring: 38 92% 50%;
+    --border: 0 0% 90%;
+    --input: 0 0% 96%;
+    --ring: 0 0% 0%;
 
-    --sidebar-background: 25 20% 15%;
-    --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 38 92% 50%;
-    --sidebar-primary-foreground: 25 20% 12%;
-    --sidebar-accent: 25 30% 25%;
-    --sidebar-accent-foreground: 38 92% 50%;
-    --sidebar-border: 25 20% 22%;
-    --sidebar-ring: 38 92% 50%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 8%;
+    --sidebar-primary: 0 0% 0%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 90%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 88%;
+    --sidebar-ring: 0 0% 0%;
   }
 }
 
