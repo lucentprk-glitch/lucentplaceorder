@@ -202,7 +202,7 @@ export default function OrderDetailPage() {
 
   if (!order) {
     return (
-      <div className="min-h-screen bg-gold-dark text-white flex flex-col items-center justify-center">
+      <div className="min-h-screen bg-white text-foreground flex flex-col items-center justify-center">
         <p className="text-muted-foreground mb-4">Order not found</p>
         <Button
           onClick={() => navigate("/orders")}
@@ -215,15 +215,15 @@ export default function OrderDetailPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gold-dark text-white">
+    <div className="min-h-screen bg-white text-foreground">
       {/* Header */}
-      <header className="bg-gold-dark border-b border-gold-light sticky top-0 z-40">
+      <header className="bg-white border-b border-border sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <button
                 onClick={() => navigate("/orders")}
-                className="p-2 hover:bg-gold-light rounded-lg transition"
+                className="p-2 hover:bg-secondary rounded-lg transition border border-border"
               >
                 <ChevronLeft className="w-6 h-6 text-primary" />
               </button>
@@ -245,34 +245,34 @@ export default function OrderDetailPage() {
           {/* Main Content */}
           <div className="lg:col-span-2">
             {/* Guest Details */}
-            <div className="bg-gold-light rounded-lg p-6 mb-6">
-              <h2 className="text-xl font-bold text-gold-dark mb-4">
+            <div className="bg-secondary rounded-lg p-6 mb-6 border border-border">
+              <h2 className="text-xl font-bold text-foreground mb-4">
                 Guest Details
               </h2>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <p className="text-sm text-gold-dark/70">Guest Name</p>
-                  <p className="font-semibold text-gold-dark">
+                  <p className="text-sm text-muted-foreground">Guest Name</p>
+                  <p className="font-semibold text-foreground">
                     {order.guest_name}
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm text-gold-dark/70">Room Number</p>
-                  <p className="font-semibold text-gold-dark">
+                  <p className="text-sm text-muted-foreground">Room Number</p>
+                  <p className="font-semibold text-foreground">
                     {order.room_no}
                   </p>
                 </div>
                 <div className="col-span-2">
-                  <p className="text-sm text-gold-dark/70">Special Requests</p>
-                  <p className="text-gold-dark">{order.notes || "-"}</p>
+                  <p className="text-sm text-muted-foreground">Special Requests</p>
+                  <p className="text-foreground">{order.notes || "-"}</p>
                 </div>
               </div>
             </div>
 
             {/* Items */}
-            <div className="bg-gold-light rounded-lg p-6 mb-6">
+            <div className="bg-secondary rounded-lg p-6 mb-6 border border-border">
               <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-bold text-gold-dark">Order Items</h2>
+                <h2 className="text-xl font-bold text-foreground">Order Items</h2>
                 <Button
                   onClick={() => setShowAddItems(true)}
                   className="bg-primary text-primary-foreground hover:bg-primary/90"
@@ -286,13 +286,13 @@ export default function OrderDetailPage() {
                 {order.items.map((item) => (
                   <div
                     key={item.id}
-                    className="bg-gold-dark/20 rounded-lg p-3 flex items-center justify-between"
+                    className="bg-white rounded-lg p-3 flex items-center justify-between border border-border"
                   >
                     <div>
-                      <p className="font-semibold text-gold-dark">
+                      <p className="font-semibold text-foreground">
                         {item.name}
                       </p>
-                      <p className="text-sm text-gold-dark/70">
+                      <p className="text-sm text-muted-foreground">
                         ₹{item.price} × {item.qty}
                       </p>
                     </div>
@@ -303,9 +303,9 @@ export default function OrderDetailPage() {
                 ))}
               </div>
 
-              <div className="mt-4 pt-4 border-t border-gold-dark/30">
+              <div className="mt-4 pt-4 border-t border-border">
                 <div className="flex justify-between items-center font-bold">
-                  <span className="text-gold-dark">Total Amount:</span>
+                  <span className="text-foreground">Total Amount:</span>
                   <span className="text-primary text-xl">₹{order.total}</span>
                 </div>
               </div>
@@ -313,14 +313,14 @@ export default function OrderDetailPage() {
 
             {/* Order History */}
             {order.history && order.history.length > 0 && (
-              <div className="bg-gold-light rounded-lg p-6">
-                <h2 className="text-xl font-bold text-gold-dark mb-4">
+              <div className="bg-secondary rounded-lg p-6 border border-border">
+                <h2 className="text-xl font-bold text-foreground mb-4">
                   Order History
                 </h2>
                 <div className="space-y-2">
                   {order.history.map((entry, idx) => (
-                    <div key={idx} className="text-sm text-gold-dark/70">
-                      <span className="font-semibold">
+                    <div key={idx} className="text-sm text-muted-foreground">
+                      <span className="font-semibold text-foreground">
                         {new Date(entry.when).toLocaleString()}:
                       </span>{" "}
                       {entry.action}
@@ -333,16 +333,16 @@ export default function OrderDetailPage() {
 
           {/* Sidebar - Status & Actions */}
           <div className="lg:col-span-1">
-            <div className="bg-gold-light rounded-lg p-6 sticky top-24">
+            <div className="bg-secondary rounded-lg p-6 sticky top-24 border border-border">
               {/* Status */}
               <div className="mb-6">
-                <label className="block text-sm font-semibold text-gold-dark mb-2">
+                <label className="block text-sm font-semibold text-foreground mb-2">
                   Order Status
                 </label>
                 <select
                   value={order.status}
                   onChange={(e) => handleStatusChange(e.target.value)}
-                  className="w-full bg-gold-dark border-0 text-white rounded px-3 py-2"
+                  className="w-full bg-white border border-border text-foreground rounded px-3 py-2"
                 >
                   <option value="New">New</option>
                   <option value="Preparing">Preparing</option>
@@ -355,13 +355,13 @@ export default function OrderDetailPage() {
 
               {/* Payment Status */}
               <div className="mb-6">
-                <label className="block text-sm font-semibold text-gold-dark mb-2">
+                <label className="block text-sm font-semibold text-foreground mb-2">
                   Payment Status
                 </label>
                 <select
                   value={order.payment_status}
                   onChange={(e) => handlePaymentStatusChange(e.target.value)}
-                  className="w-full bg-gold-dark border-0 text-white rounded px-3 py-2"
+                  className="w-full bg-white border border-border text-foreground rounded px-3 py-2"
                 >
                   <option value="Not Paid">Not Paid</option>
                   <option value="Paid">Paid</option>
@@ -388,16 +388,16 @@ export default function OrderDetailPage() {
               </div>
 
               {/* Summary */}
-              <div className="mt-6 pt-6 border-t border-gold-dark/30">
+              <div className="mt-6 pt-6 border-t border-border">
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="text-gold-dark/70">Items:</span>
-                    <span className="font-semibold text-gold-dark">
+                    <span className="text-muted-foreground">Items:</span>
+                    <span className="font-semibold text-foreground">
                       {order.items.length}
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gold-dark/70">Total:</span>
+                    <span className="text-muted-foreground">Total:</span>
                     <span className="font-bold text-primary text-lg">
                       ₹{order.total}
                     </span>
@@ -411,9 +411,9 @@ export default function OrderDetailPage() {
 
       {/* Add Items Modal */}
       <Dialog open={showAddItems} onOpenChange={setShowAddItems}>
-        <DialogContent className="bg-gold-light border-0 text-gold-dark max-h-[90vh] overflow-y-auto">
+        <DialogContent className="bg-white border border-border text-foreground max-h-[90vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle className="text-gold-dark">Add Items to Order</DialogTitle>
+            <DialogTitle className="text-foreground">Add Items to Order</DialogTitle>
           </DialogHeader>
 
           <div className="space-y-4">
@@ -423,7 +423,7 @@ export default function OrderDetailPage() {
                 placeholder="Search menu items..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="bg-gold-dark border-0 text-white placeholder:text-gold-dark/50"
+                className="bg-secondary border border-border text-foreground placeholder:text-muted-foreground"
               />
             </div>
 
@@ -432,10 +432,10 @@ export default function OrderDetailPage() {
               <button
                 onClick={() => setSelectedCategory(null)}
                 className={cn(
-                  "px-3 py-1 rounded text-sm font-semibold transition",
+                  "px-3 py-1 rounded text-sm font-semibold transition border",
                   !selectedCategory
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-gold-dark/20 text-gold-dark hover:bg-gold-dark/30"
+                    ? "bg-primary text-primary-foreground border-primary"
+                    : "bg-white text-foreground border-border hover:bg-secondary"
                 )}
               >
                 All
@@ -449,10 +449,10 @@ export default function OrderDetailPage() {
                     )
                   }
                   className={cn(
-                    "px-3 py-1 rounded text-sm font-semibold transition",
+                    "px-3 py-1 rounded text-sm font-semibold transition border",
                     selectedCategory === cat.name
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-gold-dark/20 text-gold-dark hover:bg-gold-dark/30"
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : "bg-white text-foreground border-border hover:bg-secondary"
                   )}
                 >
                   {cat.name}
@@ -466,14 +466,14 @@ export default function OrderDetailPage() {
                 <button
                   key={item.id}
                   onClick={() => handleAddItems([item])}
-                  className="w-full text-left bg-gold-dark/20 rounded-lg p-3 hover:bg-gold-dark/30 transition"
+                  className="w-full text-left bg-secondary rounded-lg p-3 hover:bg-muted transition border border-border"
                 >
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="font-semibold text-gold-dark">
+                      <p className="font-semibold text-foreground">
                         {item.name}
                       </p>
-                      <p className="text-sm text-gold-dark/70">
+                      <p className="text-sm text-muted-foreground">
                         {item.category}
                       </p>
                     </div>
@@ -497,7 +497,7 @@ export default function OrderDetailPage() {
             <Button
               onClick={() => setShowAddItems(false)}
               variant="outline"
-              className="w-full bg-gold-dark/20 border-gold-dark text-gold-dark hover:bg-gold-dark/30"
+              className="w-full bg-secondary border-border text-foreground hover:bg-muted"
             >
               Close
             </Button>
