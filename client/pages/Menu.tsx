@@ -129,9 +129,9 @@ export default function MenuPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gold-dark text-white">
+    <div className="min-h-screen bg-white text-foreground">
       {/* Header */}
-      <header className="bg-gold-dark border-b border-gold-light sticky top-0 z-40">
+      <header className="bg-white border-b border-border sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div>
@@ -143,8 +143,8 @@ export default function MenuPage() {
               </p>
             </div>
             <div className="relative">
-              <button className="relative p-2 bg-gold-light rounded-lg hover:bg-gold-light/80 transition">
-                <ShoppingCart className="w-6 h-6 text-gold-dark" />
+              <button className="relative p-2 bg-secondary rounded-lg hover:bg-muted transition border border-border">
+                <ShoppingCart className="w-6 h-6 text-foreground" />
                 {cart.length > 0 && (
                   <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                     {cart.length}
