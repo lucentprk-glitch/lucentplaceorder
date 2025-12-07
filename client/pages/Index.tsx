@@ -93,9 +93,7 @@ export default function Index() {
             </div>
 
             <div className="bg-white rounded-lg p-4 border border-border">
-              <h4 className="font-bold text-foreground mb-2">
-                Order Tracking
-              </h4>
+              <h4 className="font-bold text-foreground mb-2">Order Tracking</h4>
               <p className="text-muted-foreground text-sm">
                 Track orders from New to Completed status. Filter by date,
                 status, or room number for easy management.
@@ -113,9 +111,7 @@ export default function Index() {
             </div>
 
             <div className="bg-white rounded-lg p-4 border border-border">
-              <h4 className="font-bold text-foreground mb-2">
-                Bill Printing
-              </h4>
+              <h4 className="font-bold text-foreground mb-2">Bill Printing</h4>
               <p className="text-muted-foreground text-sm">
                 Print restaurant-style bills with order details, items, and
                 payment information.
@@ -133,9 +129,7 @@ export default function Index() {
             </div>
 
             <div className="bg-white rounded-lg p-4 border border-border">
-              <h4 className="font-bold text-foreground mb-2">
-                CSV Export
-              </h4>
+              <h4 className="font-bold text-foreground mb-2">CSV Export</h4>
               <p className="text-muted-foreground text-sm">
                 Export orders by date to CSV for auditing and reporting
                 purposes.
@@ -150,15 +144,18 @@ export default function Index() {
             About Lucent's Resto
           </h3>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            <strong className="text-foreground">Made Fresh to Order</strong> - Every
-            item is crafted from scratch using clean, high-quality ingredients.
-            We never reuse leftovers or rely on substandard materials—only good
-            FOOD, made right.
+            <strong className="text-foreground">Made Fresh to Order</strong> -
+            Every item is crafted from scratch using clean, high-quality
+            ingredients. We never reuse leftovers or rely on substandard
+            materials—only good FOOD, made right.
           </p>
           <p className="text-muted-foreground max-w-2xl mx-auto mt-4">
-            <strong className="text-foreground">Fusion & Local Favorites</strong> - From
-            mom's classic street-style bites to bold global flavors. Great food
-            takes time. Please allow 40 minutes, sometimes a little more.
+            <strong className="text-foreground">
+              Fusion & Local Favorites
+            </strong>{" "}
+            - From mom's classic street-style bites to bold global flavors.
+            Great food takes time. Please allow 40 minutes, sometimes a little
+            more.
           </p>
         </div>
       </section>

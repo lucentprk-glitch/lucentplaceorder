@@ -9,14 +9,12 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { Plus, X, Printer, Send, ChevronLeft } from "lucide-react";
 import {
-  Plus,
-  X,
-  Printer,
-  Send,
-  ChevronLeft,
-} from "lucide-react";
-import { MenuItem, RESTO_VERSION_MENU, groupMenuByCategory } from "@shared/menu";
+  MenuItem,
+  RESTO_VERSION_MENU,
+  groupMenuByCategory,
+} from "@shared/menu";
 import { cn } from "@/lib/utils";
 
 interface OrderItem {
@@ -263,7 +261,9 @@ export default function OrderDetailPage() {
                   </p>
                 </div>
                 <div className="col-span-2">
-                  <p className="text-sm text-muted-foreground">Special Requests</p>
+                  <p className="text-sm text-muted-foreground">
+                    Special Requests
+                  </p>
                   <p className="text-foreground">{order.notes || "-"}</p>
                 </div>
               </div>
@@ -272,7 +272,9 @@ export default function OrderDetailPage() {
             {/* Items */}
             <div className="bg-secondary rounded-lg p-6 mb-6 border border-border">
               <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-bold text-foreground">Order Items</h2>
+                <h2 className="text-xl font-bold text-foreground">
+                  Order Items
+                </h2>
                 <Button
                   onClick={() => setShowAddItems(true)}
                   className="bg-primary text-primary-foreground hover:bg-primary/90"
@@ -413,7 +415,9 @@ export default function OrderDetailPage() {
       <Dialog open={showAddItems} onOpenChange={setShowAddItems}>
         <DialogContent className="bg-white border border-border text-foreground max-h-[90vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle className="text-foreground">Add Items to Order</DialogTitle>
+            <DialogTitle className="text-foreground">
+              Add Items to Order
+            </DialogTitle>
           </DialogHeader>
 
           <div className="space-y-4">
@@ -435,7 +439,7 @@ export default function OrderDetailPage() {
                   "px-3 py-1 rounded text-sm font-semibold transition border",
                   !selectedCategory
                     ? "bg-primary text-primary-foreground border-primary"
-                    : "bg-white text-foreground border-border hover:bg-secondary"
+                    : "bg-white text-foreground border-border hover:bg-secondary",
                 )}
               >
                 All
@@ -445,14 +449,14 @@ export default function OrderDetailPage() {
                   key={cat.name}
                   onClick={() =>
                     setSelectedCategory(
-                      selectedCategory === cat.name ? null : cat.name
+                      selectedCategory === cat.name ? null : cat.name,
                     )
                   }
                   className={cn(
                     "px-3 py-1 rounded text-sm font-semibold transition border",
                     selectedCategory === cat.name
                       ? "bg-primary text-primary-foreground border-primary"
-                      : "bg-white text-foreground border-border hover:bg-secondary"
+                      : "bg-white text-foreground border-border hover:bg-secondary",
                   )}
                 >
                   {cat.name}

@@ -5,6 +5,7 @@ A modern, staff-only hotel order management app built with React, Vite, and Expr
 ## Features
 
 ### 🛒 Order Creation
+
 - Browse the RestoVersion menu by category (Soups, Salads, Starters, Breads, Gravy/Curry, Chinese, Rice Special, Malnad Special)
 - Search menu items in real-time
 - Add items to cart with quantity controls
@@ -12,6 +13,7 @@ A modern, staff-only hotel order management app built with React, Vite, and Expr
 - Capture guest details (name, room number, special requests, dining option, payment mode)
 
 ### 📋 Order Management
+
 - View all orders with filtering by date, status, and room number
 - Search orders by order number, guest name, or room number
 - Real-time order status tracking (New → Preparing → Ready → Served → Completed)
@@ -19,17 +21,20 @@ A modern, staff-only hotel order management app built with React, Vite, and Expr
 - CSV export for daily auditing
 
 ### ✏️ Order Modification
+
 - Add items to existing orders
 - Update order status
 - Record payment information
 - Order history tracking
 
 ### 🍽️ Operations
+
 - Print restaurant-style bills (auto-opens print dialog)
 - Send orders to kitchen via WhatsApp (integrated with Twilio)
 - View order history and modifications
 
 ### 🎨 Modern UI
+
 - Dark theme with gold accents matching RestoVersion PDF
 - Fully responsive (mobile, tablet, desktop)
 - Intuitive navigation
@@ -38,6 +43,7 @@ A modern, staff-only hotel order management app built with React, Vite, and Expr
 ## Tech Stack
 
 **Frontend:**
+
 - React 18 + TypeScript
 - Vite (build tool)
 - TailwindCSS 3 (styling)
@@ -45,6 +51,7 @@ A modern, staff-only hotel order management app built with React, Vite, and Expr
 - React Router 6 (navigation)
 
 **Backend:**
+
 - Express.js
 - In-memory storage (extensible to database)
 - REST API with authentication
@@ -52,6 +59,7 @@ A modern, staff-only hotel order management app built with React, Vite, and Expr
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js 18+ or pnpm 10+
 
 ### Installation
@@ -115,6 +123,7 @@ GET    /api/export/csv?date=YYYY-MM-DD # Export orders as CSV
 ### Example Requests
 
 **Create Order:**
+
 ```javascript
 POST /api/orders
 {
@@ -134,6 +143,7 @@ POST /api/orders
 ```
 
 **Add Items to Order:**
+
 ```javascript
 POST /api/orders/:id/items
 {
@@ -149,6 +159,7 @@ POST /api/orders/:id/items
 ```
 
 **Update Order:**
+
 ```javascript
 PUT /api/orders/:id
 {
@@ -168,6 +179,7 @@ The app comes pre-loaded with RestoVersion menu items. To add SnacksVersion or D
 4. Update the menu selector in the Menu page component
 
 Example:
+
 ```typescript
 export const SNACKS_VERSION_MENU: MenuItem[] = [
   { id: "snack_01", name: "Samosa", price: 30, category: "Fried Snacks" },
@@ -180,6 +192,7 @@ export const SNACKS_VERSION_MENU: MenuItem[] = [
 The app uses a simple passphrase-based authentication (staff-only access). Default passphrase: `letmein`
 
 To change the passphrase:
+
 - Environment variable: `ADMIN_PASSPHRASE=your-secure-passphrase`
 - Or update the default in `server/index.ts`
 
@@ -188,10 +201,11 @@ To change the passphrase:
 ### Theme Colors
 
 Edit `client/global.css` to customize colors:
+
 ```css
 :root {
-  --background: 25 20% 12%;  /* Dark brown background */
-  --primary: 38 92% 50%;     /* Gold accent */
+  --background: 25 20% 12%; /* Dark brown background */
+  --primary: 38 92% 50%; /* Gold accent */
   /* ... other colors */
 }
 ```
@@ -201,6 +215,7 @@ Tailwind config is in `tailwind.config.ts`
 ### Menu Items
 
 Edit `shared/menu.ts`:
+
 ```typescript
 export const RESTO_VERSION_MENU: MenuItem[] = [
   {
@@ -208,7 +223,7 @@ export const RESTO_VERSION_MENU: MenuItem[] = [
     name: "Dish Name",
     price: 250,
     category: "Category Name",
-    description: "Optional description"
+    description: "Optional description",
   },
   // ... more items
 ];
@@ -217,15 +232,18 @@ export const RESTO_VERSION_MENU: MenuItem[] = [
 ## Deployment
 
 ### Option 1: Netlify
+
 1. Connect your GitHub repo to Netlify
 2. Set build command: `npm run build`
 3. Set publish directory: `dist/spa`
 
 ### Option 2: Vercel
+
 1. Import GitHub repo to Vercel
 2. Auto-detected build settings work fine
 
 ### Option 3: Self-hosted (Node)
+
 1. Build: `npm run build`
 2. Start: `npm start`
 3. Deploy to your server (Heroku, DigitalOcean, etc.)

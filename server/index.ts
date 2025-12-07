@@ -185,7 +185,7 @@ export function createServer() {
     const result = filtered
       .sort(
         (a, b) =>
-          new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+          new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
       )
       .map((order) => ({
         ...order,
@@ -300,7 +300,7 @@ export function createServer() {
     const itemsHtml = items
       .map(
         (item) =>
-          `<tr><td>${item.name}</td><td style="text-align:center">${item.qty}</td><td style="text-align:right">₹${item.price}</td><td style="text-align:right">₹${item.qty * item.price}</td></tr>`
+          `<tr><td>${item.name}</td><td style="text-align:center">${item.qty}</td><td style="text-align:right">₹${item.price}</td><td style="text-align:right">₹${item.qty * item.price}</td></tr>`,
       )
       .join("");
 
@@ -363,11 +363,14 @@ export function createServer() {
       const items = orderItemsStore.get(order.id) || [];
       const itemsStr = items.map((x) => `${x.qty}x ${x.name}`).join("|");
       lines.push(
-        `"${order.order_no}","${order.created_at}","${order.guest_name}","${order.room_no}",${order.total},"${order.status}","${order.payment_status}","${itemsStr}"`
+        `"${order.order_no}","${order.created_at}","${order.guest_name}","${order.room_no}",${order.total},"${order.status}","${order.payment_status}","${itemsStr}"`,
       );
     }
 
-    res.setHeader("Content-Disposition", `attachment; filename="orders-${date}.csv"`);
+    res.setHeader(
+      "Content-Disposition",
+      `attachment; filename="orders-${date}.csv"`,
+    );
     res.setHeader("Content-Type", "text/csv");
     res.send(lines.join("\n"));
   });

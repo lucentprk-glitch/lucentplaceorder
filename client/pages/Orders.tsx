@@ -80,14 +80,11 @@ export default function OrdersPage() {
     }
 
     try {
-      const response = await fetch(
-        `/api/export/csv?date=${selectedDate}`,
-        {
-          headers: {
-            "x-passphrase": "letmein",
-          },
-        }
-      );
+      const response = await fetch(`/api/export/csv?date=${selectedDate}`, {
+        headers: {
+          "x-passphrase": "letmein",
+        },
+      });
 
       if (response.ok) {
         const blob = await response.blob();
@@ -181,9 +178,7 @@ export default function OrdersPage() {
               </label>
               <select
                 value={selectedStatus || ""}
-                onChange={(e) =>
-                  setSelectedStatus(e.target.value || null)
-                }
+                onChange={(e) => setSelectedStatus(e.target.value || null)}
                 className="w-full bg-white border border-border text-foreground rounded px-3 py-2"
               >
                 <option value="">All Status</option>

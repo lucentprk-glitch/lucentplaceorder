@@ -8,7 +8,11 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { X, Minus, Plus, ShoppingCart } from "lucide-react";
-import { MenuItem, RESTO_VERSION_MENU, groupMenuByCategory } from "@shared/menu";
+import {
+  MenuItem,
+  RESTO_VERSION_MENU,
+  groupMenuByCategory,
+} from "@shared/menu";
 import { cn } from "@/lib/utils";
 
 interface CartItem extends MenuItem {
@@ -53,7 +57,7 @@ export default function MenuPage() {
       const existing = prev.find((i) => i.id === item.id);
       if (existing) {
         return prev.map((i) =>
-          i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
+          i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i,
         );
       }
       return [...prev, { ...item, quantity: 1 }];
@@ -65,7 +69,7 @@ export default function MenuPage() {
       removeFromCart(id);
     } else {
       setCart((prev) =>
-        prev.map((i) => (i.id === id ? { ...i, quantity } : i))
+        prev.map((i) => (i.id === id ? { ...i, quantity } : i)),
       );
     }
   };
@@ -74,7 +78,10 @@ export default function MenuPage() {
     setCart((prev) => prev.filter((i) => i.id !== id));
   };
 
-  const cartTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const cartTotal = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0,
+  );
 
   const handleSaveOrder = async () => {
     if (!guestDetails.guestName || !guestDetails.roomNo) {
@@ -107,9 +114,7 @@ export default function MenuPage() {
 
       if (response.ok) {
         const savedOrder = await response.json();
-        alert(
-          `Order saved successfully! Order No: ${savedOrder.order_no}`
-        );
+        alert(`Order saved successfully! Order No: ${savedOrder.order_no}`);
         setCart([]);
         setGuestDetails({
           guestName: "",
@@ -178,7 +183,7 @@ export default function MenuPage() {
                   "px-4 py-2 rounded-lg font-semibold transition border",
                   !selectedCategory
                     ? "bg-primary text-primary-foreground border-primary"
-                    : "bg-white text-foreground border-border hover:bg-secondary"
+                    : "bg-white text-foreground border-border hover:bg-secondary",
                 )}
               >
                 All Items
@@ -188,14 +193,14 @@ export default function MenuPage() {
                   key={cat.name}
                   onClick={() =>
                     setSelectedCategory(
-                      selectedCategory === cat.name ? null : cat.name
+                      selectedCategory === cat.name ? null : cat.name,
                     )
                   }
                   className={cn(
                     "px-4 py-2 rounded-lg font-semibold transition border",
                     selectedCategory === cat.name
                       ? "bg-primary text-primary-foreground border-primary"
-                      : "bg-white text-foreground border-border hover:bg-secondary"
+                      : "bg-white text-foreground border-border hover:bg-secondary",
                   )}
                 >
                   {cat.name}
@@ -292,7 +297,9 @@ export default function MenuPage() {
 
                   <div className="border-t border-border pt-4 mb-4">
                     <div className="flex justify-between items-center mb-4">
-                      <span className="font-semibold text-foreground">Total:</span>
+                      <span className="font-semibold text-foreground">
+                        Total:
+                      </span>
                       <span className="text-xl font-bold text-primary">
                         ₹{cartTotal}
                       </span>
