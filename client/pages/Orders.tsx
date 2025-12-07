@@ -221,49 +221,49 @@ export default function OrdersPage() {
             {filteredOrders.map((order) => (
               <div
                 key={order.id}
-                className="bg-gold-light rounded-lg p-4 hover:bg-gold-light/80 transition"
+                className="bg-white rounded-lg p-4 hover:shadow-md transition border border-border"
               >
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-start">
                   <div>
-                    <p className="text-sm text-gold-dark/70">Order No</p>
-                    <p className="font-bold text-gold-dark text-lg">
+                    <p className="text-sm text-muted-foreground">Order No</p>
+                    <p className="font-bold text-foreground text-lg">
                       {order.order_no}
                     </p>
                   </div>
 
                   <div>
-                    <p className="text-sm text-gold-dark/70">Guest</p>
-                    <p className="font-semibold text-gold-dark">
+                    <p className="text-sm text-muted-foreground">Guest</p>
+                    <p className="font-semibold text-foreground">
                       {order.guest_name}
                     </p>
-                    <p className="text-sm text-gold-dark/70">
+                    <p className="text-sm text-muted-foreground">
                       Room: {order.room_no}
                     </p>
                   </div>
 
                   <div>
-                    <p className="text-sm text-gold-dark/70">Items</p>
-                    <p className="font-semibold text-gold-dark">
+                    <p className="text-sm text-muted-foreground">Items</p>
+                    <p className="font-semibold text-foreground">
                       {order.items.length} items
                     </p>
-                    <p className="text-sm text-gold-dark/70">
+                    <p className="text-sm text-muted-foreground">
                       {new Date(order.created_at).toLocaleTimeString()}
                     </p>
                   </div>
 
                   <div>
-                    <p className="text-sm text-gold-dark/70">Status</p>
+                    <p className="text-sm text-muted-foreground">Status</p>
                     <Badge className={cn("mt-1", getStatusColor(order.status))}>
                       {order.status}
                     </Badge>
-                    <p className="text-sm text-gold-dark/70 mt-2">
+                    <p className="text-sm text-muted-foreground mt-2">
                       Payment: {order.payment_status}
                     </p>
                   </div>
 
                   <div className="flex flex-col items-end justify-between h-full">
                     <div className="text-right">
-                      <p className="text-sm text-gold-dark/70">Total</p>
+                      <p className="text-sm text-muted-foreground">Total</p>
                       <p className="font-bold text-primary text-xl">
                         ₹{order.total}
                       </p>
