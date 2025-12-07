@@ -315,12 +315,12 @@ export default function MenuPage() {
       <Dialog open={showCheckout} onOpenChange={setShowCheckout}>
         <DialogContent className="bg-white border border-border text-foreground">
           <DialogHeader>
-            <DialogTitle className="text-gold-dark">Order Details</DialogTitle>
+            <DialogTitle className="text-foreground">Order Details</DialogTitle>
           </DialogHeader>
 
           <div className="space-y-4">
             <div>
-              <label className="block text-sm font-semibold text-gold-dark mb-1">
+              <label className="block text-sm font-semibold text-foreground mb-1">
                 Guest Name *
               </label>
               <Input
@@ -331,13 +331,13 @@ export default function MenuPage() {
                     guestName: e.target.value,
                   })
                 }
-                className="bg-gold-dark border-0 text-white placeholder:text-gold-dark/50"
+                className="bg-secondary border border-border text-foreground placeholder:text-muted-foreground"
                 placeholder="Enter guest name"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gold-dark mb-1">
+              <label className="block text-sm font-semibold text-foreground mb-1">
                 Room Number *
               </label>
               <Input
@@ -345,13 +345,13 @@ export default function MenuPage() {
                 onChange={(e) =>
                   setGuestDetails({ ...guestDetails, roomNo: e.target.value })
                 }
-                className="bg-gold-dark border-0 text-white placeholder:text-gold-dark/50"
+                className="bg-secondary border border-border text-foreground placeholder:text-muted-foreground"
                 placeholder="Enter room number"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gold-dark mb-1">
+              <label className="block text-sm font-semibold text-foreground mb-1">
                 Special Requests
               </label>
               <Input
@@ -359,13 +359,13 @@ export default function MenuPage() {
                 onChange={(e) =>
                   setGuestDetails({ ...guestDetails, notes: e.target.value })
                 }
-                className="bg-gold-dark border-0 text-white placeholder:text-gold-dark/50"
+                className="bg-secondary border border-border text-foreground placeholder:text-muted-foreground"
                 placeholder="Any special requests?"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gold-dark mb-1">
+              <label className="block text-sm font-semibold text-foreground mb-1">
                 Dining Option
               </label>
               <select
@@ -376,7 +376,7 @@ export default function MenuPage() {
                     tableChoice: e.target.value,
                   })
                 }
-                className="w-full bg-gold-dark border-0 text-white rounded px-3 py-2"
+                className="w-full bg-secondary border border-border text-foreground rounded px-3 py-2"
               >
                 <option value="Room">Room Service</option>
                 <option value="Table">Table/Dining</option>
@@ -385,7 +385,7 @@ export default function MenuPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gold-dark mb-1">
+              <label className="block text-sm font-semibold text-foreground mb-1">
                 Payment Mode
               </label>
               <select
@@ -396,7 +396,7 @@ export default function MenuPage() {
                     paymentMode: e.target.value,
                   })
                 }
-                className="w-full bg-gold-dark border-0 text-white rounded px-3 py-2"
+                className="w-full bg-secondary border border-border text-foreground rounded px-3 py-2"
               >
                 <option value="Paid at checkout">Paid at checkout</option>
                 <option value="Paid now">Paid now</option>
@@ -405,9 +405,9 @@ export default function MenuPage() {
               </select>
             </div>
 
-            <div className="bg-gold-dark/20 rounded-lg p-3 mt-4">
+            <div className="bg-secondary rounded-lg p-3 mt-4 border border-border">
               <div className="flex justify-between items-center font-bold">
-                <span>Total Amount:</span>
+                <span className="text-foreground">Total Amount:</span>
                 <span className="text-primary text-xl">₹{cartTotal}</span>
               </div>
             </div>
@@ -416,7 +416,7 @@ export default function MenuPage() {
               <Button
                 onClick={() => setShowCheckout(false)}
                 variant="outline"
-                className="flex-1 bg-gold-dark/20 border-gold-dark text-gold-dark hover:bg-gold-dark/30"
+                className="flex-1 bg-white border-border text-foreground hover:bg-secondary"
               >
                 Cancel
               </Button>
