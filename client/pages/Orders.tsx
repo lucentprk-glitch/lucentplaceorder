@@ -120,9 +120,9 @@ export default function OrdersPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gold-dark text-white">
+    <div className="min-h-screen bg-white text-foreground">
       {/* Header */}
-      <header className="bg-gold-dark border-b border-gold-light sticky top-0 z-40">
+      <header className="bg-white border-b border-border sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div>
@@ -146,37 +146,37 @@ export default function OrdersPage() {
 
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Filters */}
-        <div className="bg-gold-light rounded-lg p-6 mb-8">
+        <div className="bg-secondary rounded-lg p-6 mb-8 border border-border">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-gold-dark mb-2">
+              <label className="block text-sm font-semibold text-foreground mb-2">
                 Search
               </label>
               <div className="relative">
-                <Search className="absolute left-3 top-2.5 w-5 h-5 text-gold-dark/50" />
+                <Search className="absolute left-3 top-2.5 w-5 h-5 text-muted-foreground" />
                 <Input
                   placeholder="Order #, Guest name, Room..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 bg-gold-dark border-0 text-white placeholder:text-gold-dark/50"
+                  className="pl-10 bg-white border border-border text-foreground placeholder:text-muted-foreground"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gold-dark mb-2">
+              <label className="block text-sm font-semibold text-foreground mb-2">
                 Date
               </label>
               <Input
                 type="date"
                 value={selectedDate}
                 onChange={(e) => setSelectedDate(e.target.value)}
-                className="bg-gold-dark border-0 text-white"
+                className="bg-white border border-border text-foreground"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gold-dark mb-2">
+              <label className="block text-sm font-semibold text-foreground mb-2">
                 Status
               </label>
               <select
@@ -184,7 +184,7 @@ export default function OrdersPage() {
                 onChange={(e) =>
                   setSelectedStatus(e.target.value || null)
                 }
-                className="w-full bg-gold-dark border-0 text-white rounded px-3 py-2"
+                className="w-full bg-white border border-border text-foreground rounded px-3 py-2"
               >
                 <option value="">All Status</option>
                 <option value="New">New</option>
