@@ -166,7 +166,7 @@ export default function MenuPage() {
                 placeholder="Search menu items..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="bg-gold-light border-0 text-white placeholder:text-muted-foreground focus:ring-2 focus:ring-primary"
+                className="bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary"
               />
             </div>
 
@@ -175,10 +175,10 @@ export default function MenuPage() {
               <button
                 onClick={() => setSelectedCategory(null)}
                 className={cn(
-                  "px-4 py-2 rounded-lg font-semibold transition",
+                  "px-4 py-2 rounded-lg font-semibold transition border",
                   !selectedCategory
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-gold-light text-gold-dark hover:bg-gold-light/80"
+                    ? "bg-primary text-primary-foreground border-primary"
+                    : "bg-white text-foreground border-border hover:bg-secondary"
                 )}
               >
                 All Items
@@ -192,10 +192,10 @@ export default function MenuPage() {
                     )
                   }
                   className={cn(
-                    "px-4 py-2 rounded-lg font-semibold transition",
+                    "px-4 py-2 rounded-lg font-semibold transition border",
                     selectedCategory === cat.name
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-gold-light text-gold-dark hover:bg-gold-light/80"
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : "bg-white text-foreground border-border hover:bg-secondary"
                   )}
                 >
                   {cat.name}
@@ -208,13 +208,13 @@ export default function MenuPage() {
               {filteredMenu.map((item) => (
                 <div
                   key={item.id}
-                  className="bg-gold-light rounded-lg p-4 flex items-start justify-between hover:bg-gold-light/80 transition"
+                  className="bg-white rounded-lg p-4 flex items-start justify-between hover:shadow-md transition border border-border"
                 >
                   <div className="flex-1">
-                    <h3 className="font-semibold text-gold-dark text-lg">
+                    <h3 className="font-semibold text-foreground text-lg">
                       {item.name}
                     </h3>
-                    <p className="text-gold-dark/70 text-sm">
+                    <p className="text-muted-foreground text-sm">
                       {item.category}
                     </p>
                     <p className="text-primary font-bold mt-2">₹{item.price}</p>
@@ -232,13 +232,13 @@ export default function MenuPage() {
 
           {/* Cart Sidebar */}
           <div className="lg:col-span-1">
-            <div className="bg-gold-light rounded-lg p-6 sticky top-24">
-              <h2 className="text-xl font-bold text-gold-dark mb-4">
+            <div className="bg-secondary rounded-lg p-6 sticky top-24 border border-border">
+              <h2 className="text-xl font-bold text-foreground mb-4">
                 Order Cart
               </h2>
 
               {cart.length === 0 ? (
-                <p className="text-gold-dark/70 text-center py-8">
+                <p className="text-muted-foreground text-center py-8">
                   No items added yet
                 </p>
               ) : (
@@ -247,15 +247,15 @@ export default function MenuPage() {
                     {cart.map((item) => (
                       <div
                         key={item.id}
-                        className="bg-gold-dark/20 rounded-lg p-3"
+                        className="bg-white rounded-lg p-3 border border-border"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-semibold text-gold-dark text-sm">
+                          <h4 className="font-semibold text-foreground text-sm">
                             {item.name}
                           </h4>
                           <button
                             onClick={() => removeFromCart(item.id)}
-                            className="text-red-400 hover:text-red-600"
+                            className="text-red-500 hover:text-red-700"
                           >
                             <X className="w-4 h-4" />
                           </button>
@@ -266,23 +266,23 @@ export default function MenuPage() {
                               onClick={() =>
                                 updateQuantity(item.id, item.quantity - 1)
                               }
-                              className="bg-gold-dark text-white w-6 h-6 rounded flex items-center justify-center hover:bg-gold-dark/80"
+                              className="bg-primary text-white w-6 h-6 rounded flex items-center justify-center hover:bg-primary/90"
                             >
                               <Minus className="w-3 h-3" />
                             </button>
-                            <span className="w-8 text-center text-gold-dark font-semibold">
+                            <span className="w-8 text-center text-foreground font-semibold">
                               {item.quantity}
                             </span>
                             <button
                               onClick={() =>
                                 updateQuantity(item.id, item.quantity + 1)
                               }
-                              className="bg-gold-dark text-white w-6 h-6 rounded flex items-center justify-center hover:bg-gold-dark/80"
+                              className="bg-primary text-white w-6 h-6 rounded flex items-center justify-center hover:bg-primary/90"
                             >
                               <Plus className="w-3 h-3" />
                             </button>
                           </div>
-                          <p className="font-semibold text-gold-dark">
+                          <p className="font-semibold text-foreground">
                             ₹{item.price * item.quantity}
                           </p>
                         </div>
@@ -290,9 +290,9 @@ export default function MenuPage() {
                     ))}
                   </div>
 
-                  <div className="border-t border-gold-dark/30 pt-4 mb-4">
+                  <div className="border-t border-border pt-4 mb-4">
                     <div className="flex justify-between items-center mb-4">
-                      <span className="font-semibold text-gold-dark">Total:</span>
+                      <span className="font-semibold text-foreground">Total:</span>
                       <span className="text-xl font-bold text-primary">
                         ₹{cartTotal}
                       </span>
@@ -313,7 +313,7 @@ export default function MenuPage() {
 
       {/* Checkout Modal */}
       <Dialog open={showCheckout} onOpenChange={setShowCheckout}>
-        <DialogContent className="bg-gold-light border-0 text-gold-dark">
+        <DialogContent className="bg-white border border-border text-foreground">
           <DialogHeader>
             <DialogTitle className="text-gold-dark">Order Details</DialogTitle>
           </DialogHeader>
